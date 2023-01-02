@@ -1,9 +1,50 @@
-.titulo{
+/* Background*/
+body,html {height:100%;overflow:hidden;}
+body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(to bottom, #6e529d 0%,#d97b93 100%);
+}
+div {
+  border: 1px solid rgba(255,255,255,.1);
+  width: 10em;
+  height: 10em;
+  transform: rotate(45deg);
+  margin: 2em;
+  float: left;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%,rgba(0,0,0,0.05) 100%); 
+}
+
+/*Content*/
+main{
     display: flex;
     justify-content: center;
+    
+}
+.titulo{
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
 }
 
 .jogos{
-    display: flex;
-    justify-content: center;
+    margin: 2%;
+    padding: 2%;
+    border-style: solid;
+    border-color: #d97b93;
+    border-radius: 15%;
+    background-color: #d97b93;
+
+}
+.jogos, a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    color:white;
+
 }
