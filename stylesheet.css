@@ -1,0 +1,9 @@
+.titulo{
+    display: flex;
+    justify-content: center;
+}
+
+.jogos{
+    display: flex;
+    justify-content: center;
+}
