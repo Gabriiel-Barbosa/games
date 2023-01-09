@@ -1,50 +1,41 @@
 /* Background*/
-body,html {height:100%;overflow:hidden;}
-body {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: linear-gradient(to bottom, #6e529d 0%,#d97b93 100%);
-}
-div {
-  border: 1px solid rgba(255,255,255,.1);
-  width: 10em;
-  height: 10em;
-  transform: rotate(45deg);
-  margin: 2em;
-  float: left;
-  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%,rgba(0,0,0,0.05) 100%); 
+
+body{
+  background-color: #2D7551;
+  color: #FFFFFF;
 }
 
-/*Content*/
-main{
-    display: flex;
-    justify-content: center;
-    
-}
-.titulo{
-    font-size: larger;
-    display: flex;
-    justify-content: center;
-    text-transform: uppercase;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
-}
+.titulo__jogos{
+  background-color: #1D232A;
+  padding: 25px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
 
+}
+.titulo__jogos h1{
+  text-align: center;
+  font-size: 3rem;
+}
 .jogos{
-    margin: 2%;
-    padding: 2%;
-    border-style: solid;
-    border-color: #d97b93;
-    border-radius: 15%;
-    background-color: #d97b93;
+  padding: 3rem;
+}
+.jogos__cassino{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
-.jogos, a{
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: larger;
-    color:white;
-
+.jogos__cassino--link{
+  border: 2px;
+  border-style: solid;
+  border-color: #daa520 ;
+  border-radius: 1rem;
+  background-color: #CC3333;
+  padding: 1rem;
+  transition: 0.3s;
+}
+.jogos__cassino--link:hover{
+  padding: 2rem;
+  background-color: #daa520;
 }
