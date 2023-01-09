@@ -1,0 +1,41 @@
+/*Body*/
+
+body{
+    background-color: #2D7551;
+    color: #FFFFFF;
+  }
+ /*Header*/ 
+.cabecalho{
+    background-color: #1D232A;
+    padding: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    text-align: center;
+    font-size: 3rem;
+}
+
+/*Buttons*/
+.bingo__botoes{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5rem;
+    font-size: 25px;
+}
+.bingo__botoes-item{
+    background-color: #1D232A;
+    border: solid #1D232A 3px;
+    border-radius: 10%;
+    padding:13px;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    
+}
+.bingo__botoes-item:hover{
+    transition: 0.5s;
+    border-color: #DAA520;
+    color: #DAA520;
+}
+.bingo__botoes-item:active{
+    transition: 0.5s;
+    font-size: 28px;
+}
+
