@@ -14,11 +14,27 @@
     </header>
     <main class="principal">
         <section class="bingo__botoes">
-            <button class="bingo__botoes-item">Nova cartela</button>
-            <button class="bingo__botoes-item">Sortear número</button>
+            <button class="bingo__botoes-item" onclick="numerosCartela();sortearTabela();zeraSorteados()">Nova cartela</button>
+            <button class="bingo__botoes-item bingo__botoes--sortear-numero" onclick="sortearNumero(); ">Sortear número</button>
             <button class="bingo__botoes-item">Jogar Contra o computador</button>
         </section>
+
+        <section class="sorteio">
+            <h2 class="sorteio__ultimo-numero">ULTIMO NUMERO SORTEADO: </h2>
+            <h2 class="sorteio__numeros">NUMEROS SORTEADOS: </h2>
+            
+        </section>
+        <section class="tabela">
+
+            <table class="tabela__conteudo" id="tabela_sorteada">
+                <tr >
+                   
+                </tr>
+
+            </table>
+        </section>
     </main>
-    
+
+    <script src="/assets/Js/main.js"></script>
 </body>
 </html>
