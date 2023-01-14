@@ -14,9 +14,9 @@
     </header>
     <main class="principal">
         <section class="bingo__botoes">
-            <button class="bingo__botoes-item" onclick="numerosCartela();sortearTabela();zeraSorteados()">Nova cartela</button>
-            <button class="bingo__botoes-item bingo__botoes--sortear-numero" onclick="sortearNumero(); ">Sortear número</button>
-            <button class="bingo__botoes-item">Jogar Contra o computador</button>
+            <button class="bingo__botoes-item" onclick="zeraSorteados();numerosCartela(numeros_cartelaUser);sortearTabela(tabela_user, numeros_cartelaUser);">Nova cartela</button>
+            <button class="bingo__botoes-item bingo__botoes--sortear-numero" onclick="sortearNumero();ponteiaTabela(); ">Sortear número</button>
+            <button class="bingo__botoes-item " onclick="zeraSorteados();numerosCartela(numeros_cartelaComputador);sortearTabela(tabela_computador, numeros_cartelaComputador );" >Jogar Contra o computador</button>
         </section>
 
         <section class="sorteio">
@@ -26,11 +26,16 @@
         </section>
         <section class="tabela">
 
-            <table class="tabela__conteudo" id="tabela_sorteada">
+            <table class="tabela__conteudo" id="tabela_sorteada-user">
+                <h2 class=""></h2>
                 <tr >
                    
                 </tr>
 
+            </table>
+
+            <table class="tabela__conteudo" id="tabela_sorteada-computador">
+                <h2 class=""></h2>
             </table>
         </section>
     </main>
