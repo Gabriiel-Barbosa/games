@@ -1,6 +1,17 @@
 //Pegando o Botão que será usado para sortear os números
 const botaoSortearNumero = document.querySelector('bingo__botoes--sortear-numero');
 
+//Pegando o botão que vai dispara o alerta com o tutorial
+function tuorialBingo(){
+    customAlert("<ul>" +
+    "<li>Sortear Cartela - Sorteia a cartela do jogador e do computador.</li>" +
+    "<li>Sortear Cartela - Reinicia o sorteio de números</li>" +
+    "<li>Sortear número  - Sorteia os números.</li>" +
+    "<li>Marque na sua cartela os números correspondentes que forem sorteados.</li>" +
+    "<li>O computador marcará automaticamente na cartela dele, os números que forem sorteados.</li>" +
+    "</ul>")
+}
+
 //Função que sorteia os números e adiciona os números no array sorteados
 function sortearNumero() {
     var numeroSorteado;
@@ -30,6 +41,12 @@ function zeraSorteados(){
 var numeros_cartelaUser = [];
 var numeros_cartelaComputador = [];
 
+// Tabelas que serão interadas
+let tabela_user = document.getElementById("tabela_sorteada-user");
+let tabela_computador = document.getElementById("tabela_sorteada-computador");
+
+//
+    
 // Função que define o os intervalos que serão interados na tabela . Ela também adiciona os interáveis
 function sortearIntervalo(rangeStart, rangeEnd, cartela) {
     var numeros_selecionados = [];
@@ -43,6 +60,9 @@ function sortearIntervalo(rangeStart, rangeEnd, cartela) {
     cartela.push(numeros_selecionados);
 }
 
+
+
+  
 //Chamada da função para prrencher a tabela do Usuário
 function numerosCartela(cartela_srt) {
     cartela_srt.length = 0
@@ -60,10 +80,6 @@ function numerosCartela(cartela_srt) {
         }
     }   
 }
-
-// Tabelas que serão interadas
-let tabela_user = document.getElementById("tabela_sorteada-user");
-let tabela_computador = document.getElementById("tabela_sorteada-computador");
 
 // Função adiciona os números na tabela
 function sortearTabela(tabela, cartela_numeros){    
@@ -87,6 +103,20 @@ function sortearTabela(tabela, cartela_numeros){
         cell5.innerHTML = cartela_numeros[4][i];
     }
 }
+//Alertas Customizado 
+
+function customAlert(message) {
+    var alertBox = document.getElementById("custom-alert");
+    var alertMessage = document.getElementById("alert-message");
+    var closeBtn = document.getElementById("alert-close-btn");
+    
+    alertMessage.innerHTML = message;
+    alertBox.style.display = "block";
+  
+    closeBtn.addEventListener("click", function() {
+      alertBox.style.display = "none";
+    });
+  }
 
 //Bloco de código  para interação do user com a tabela(Marcar os campos sorteados de vermelho )
 let contador_user = 0
@@ -102,7 +132,7 @@ tabela_click.onclick = function(event){
             contador_user = contador_user + 1
         console.log(contador)
             if(contador_user == 25){
-                alert("BINGOOOOOOOOOOO!!!PARABÉNS, VOCÊ VENCEU")
+                customAlert("BINGOOOOOOOOOOO!!!PARABÉNS, VOCÊ VENCEU")
             }
 
         }  else {
@@ -125,6 +155,7 @@ function ponteiaTabela(){
         }
     }
     if(contador == 25){
-        alert("BINGOOOOOOOOOOO, mas para o computador. Tente na Próxima!!!")
+        customAlert("BINGOOOOOOOOOOO, mas para o computador. Tente na Próxima!!!")
     }
 }
+  

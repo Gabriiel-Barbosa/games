@@ -9,37 +9,55 @@
     <link rel="stylesheet" href="/assets/CSS/styles.css">
 </head>
 <body>
+    <!--header para o título do jogo-->
     <header class="cabecalho">
-        <h1>Bem Vindo ao Bingo</h1>
+        <h1 class="cabecalho__titulo">Bem Vindo ao Bingo</h1>
+        <div class="cabecalho__links">
+            <a class="cabecalho__links-jogos cabecalho__links-itens" href="/index.html">Todos os Jogos</a>
+            <button class="cabecalho__links-tutorial cabecalho__links-itens" onclick="tuorialBingo()">Como Jogar</button>
+
+        </div >
+        
     </header>
     <main class="principal">
+
+        <!--Alerta para o jogador-->
+        <div id="custom-alert" class="alert">
+            <div class="alert-content">
+              <p id="alert-message"></p>
+              <button id="alert-close-btn">Fechar</button>
+            </div>
+          </div>
+        <!--Seção dos botões do jogo-->
         <section class="bingo__botoes">
-            <button class="bingo__botoes-item" onclick="zeraSorteados();numerosCartela(numeros_cartelaUser);sortearTabela(tabela_user, numeros_cartelaUser);">Nova cartela</button>
-            <button class="bingo__botoes-item bingo__botoes--sortear-numero" onclick="sortearNumero();ponteiaTabela(); ">Sortear número</button>
-            <button class="bingo__botoes-item " onclick="zeraSorteados();numerosCartela(numeros_cartelaComputador);sortearTabela(tabela_computador, numeros_cartelaComputador );" >Jogar Contra o computador</button>
+            
+
+            <button class="bingo__botoes-item botao__JogadorxComputador" onclick="zeraSorteados();numerosCartela(numeros_cartelaUser);sortearTabela(tabela_user, numeros_cartelaUser);;numerosCartela(numeros_cartelaComputador);sortearTabela(tabela_computador, numeros_cartelaComputador );">Sortear Tabelas</button>
+
+            <button class="bingo__botoes-item bingo__botoes--sortear-numero" onclick="sortearNumero();ponteiaTabela(); ">Sortear Número</button>
+            
         </section>
 
+        <!--Seção do sorteio-->
         <section class="sorteio">
             <h2 class="sorteio__ultimo-numero">ULTIMO NUMERO SORTEADO: </h2>
             <h2 class="sorteio__numeros">NUMEROS SORTEADOS: </h2>
             
         </section>
+        <!--Seção das tabelas-->
         <section class="tabela">
 
             <table class="tabela__conteudo" id="tabela_sorteada-user">
-                <h2 class=""></h2>
-                <tr >
-                   
-                </tr>
+                <h2 class="tabela_titulo">Tabela Jogador </h2>
 
             </table>
 
             <table class="tabela__conteudo" id="tabela_sorteada-computador">
-                <h2 class=""></h2>
+                <h2 class="tabela_titulo">Tabela Computador</h2>
             </table>
         </section>
     </main>
-
+    <!--script para o funcionamento do jogo-->
     <script src="/assets/Js/main.js"></script>
 </body>
 </html>
