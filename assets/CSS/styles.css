@@ -47,13 +47,13 @@ justify-content: flex-end;
 
 
 /*Buttons*/
-.bingo__botoes{
+.jogos__botoes{
     display: flex;
     justify-content: space-evenly;
     padding: 5rem;
     font-size: 25px;
 }
-.bingo__botoes-item{
+.jogos__botoes-item{
     background-color: var(--preto-primario);
     border: solid var(--preto-primario) 3px;
     border-radius: 10%;
@@ -62,7 +62,7 @@ justify-content: flex-end;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
     
 }
-.bingo__botoes-item:hover {
+.jogos__botoes-item:hover {
     transition: 0.5s;
     border-color: var(--dourado-primario);
     color: var(--dourado-primario);
@@ -149,3 +149,4 @@ justify-content: flex-end;
   
 
 
+/* Black - Jack*/
