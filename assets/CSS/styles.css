@@ -1,0 +1,152 @@
+/* 
+***************************************************************
+*                                                             *
+* Essa folha de estilo é destinada aos jogos da página JOGOS WEB 01 *
+*                                                             *
+***************************************************************
+*/
+
+
+/*Body*/
+
+:root{
+    --corde-fundo: #2D7551;
+    --preto-primario:#1D232A;
+    --dourado-primario:#DAA520;
+    --branco-primario:#FFFFFF;
+}
+body{
+    background-color: var(--corde-fundo);
+    color: var(--branco-primario);
+  }
+ /*Header*/ 
+.cabecalho__titulo{
+    background-color: var(--preto-primario);
+    padding: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    text-align: center;
+    font-size: 3rem;
+}
+.cabecalho__links{
+display: flex;
+justify-content: flex-end;
+}
+.cabecalho__links-itens{
+    margin: 8px ;
+    padding: 8px;
+    background-color: var(--preto-primario);
+    border: solid var(--preto-primario) 2px ;
+    border-radius: 5px;
+
+}
+.cabecalho__links-itens:hover{
+    color: var(--dourado-primario);
+    border: solid var(--dourado-primario) 2px ;
+    border-radius: 5px;
+}
+
+
+/*Buttons*/
+.jogos__botoes{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5rem;
+    font-size: 25px;
+}
+.jogos__botoes-item{
+    background-color: var(--preto-primario);
+    border: solid var(--preto-primario) 3px;
+    border-radius: 10%;
+    padding:13px;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    
+}
+.jogos__botoes-item:hover {
+    transition: 0.5s;
+    border-color: var(--dourado-primario);
+    color: var(--dourado-primario);
+}
+
+/*BINGO SORTEIO*/
+.sorteio{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.sorteio__ultimo-numero{
+    background-color: var(--preto-primario);
+    font-size: 30px;
+    padding: 3.5px;
+    border: solid var(--dourado-primario) 2px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+.sorteio__numeros{
+    font-size: 21.5px;
+    color: var(--branco-primario);
+    background-color: var(--preto-primario);
+    border: solid var(--dourado-primario) 2px;
+    padding: 2.5px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+/*BINGO TABELAS*/
+.tabela{
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+.tabela__conteudo tr, th, td{
+    border: solid   var(--dourado-primario); 
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bolder;
+    background-color: var(--preto-primario);
+         
+}
+/*Tabelas Títulos*/
+.tabela_titulo{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    color: var(--branco-primario);
+    background-color: var(--preto-primario);
+    border: solid var(--dourado-primario) 2px;
+    padding: 2.5px;
+    border-radius: 10px;
+    margin: 5px;
+}
+/*Alerta*/
+.alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--preto-primario);
+    border: solid var(--dourado-primario);
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 999;
+  }
+.alert-content {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#alert-close-btn {
+    background-color: var(--dourado-primario);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 8px;
+}
+  
+
+
+/* Black - Jack*/
