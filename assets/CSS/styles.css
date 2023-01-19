@@ -52,6 +52,7 @@ justify-content: flex-end;
     justify-content: space-evenly;
     padding: 5rem;
     font-size: 25px;
+    
 }
 .jogos__botoes-item{
     background-color: var(--preto-primario);
@@ -150,3 +151,29 @@ justify-content: flex-end;
 
 
 /* Black - Jack*/
+
+
+.cartas{
+    display: flex;
+}
+.cartas__mesa{
+    background-color: var(--branco-primario);
+    color: #DAA520;
+    height: 195px;
+    width: 125px;
+    border-radius: 15px;
+    margin: 15px;
+    border: solid 1.5px;
+    border-color: var(--dourado-primario);
+}
+.cartas__mesa--valor{
+    margin: 8px;justify-content: flex-start;
+    font-size: 28px;
+
+}
+.cartas__mesa--naipe{
+    margin: 8px;
+    text-align: center;
+    justify-content: center;
+    font-size: 25px;
+}
