@@ -130,7 +130,7 @@ tabela_click.onclick = function(event){
         if (sorteados.includes(parseInt(campo_clicado.innerHTML))) { 
             campo_clicado.style.backgroundColor = "red";
             contador_user = contador_user + 1
-        console.log(contador)
+        console.log(contador_user)
             if(contador_user == 25){
                 customAlert("BINGOOOOOOOOOOO!!!PARABÉNS, VOCÊ VENCEU")
             }
