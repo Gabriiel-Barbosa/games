@@ -6,6 +6,8 @@ const valores = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A
 let baralho1 = [];
 let baralho2 = [];
 
+let cartas__selecioandas = []
+
 //Preenchendo os baralhos com todas as cartas possíveis
 for (let naipe in naipes) {
     for (let j = 0; j < valores.length; j++) {
@@ -19,47 +21,45 @@ for (let naipe in naipes) {
 //Criando as Cartas
 const tirar_carta = document.getElementById("tirarCarta");
 
-//Função para selecionar o naipe de uma carta aleatória do baralho
-function selecionaCartaNaipe(baralho){
+//Função para selecionar o naipe e o valor  de uma carta aleatória do baralho
+function selecionaCartaMesa(baralho){
     //Gerando um número aleatório correspondente ao índice de uma carta no baralho
     let index = Math.floor(Math.random() * baralho.length);
     //Selecionando a carta
-    let naipe = baralho[index];
-    //Retornando o naipe da carta
-    return naipe[1];
+    carta_mesa = baralho[index];
+    console.log(baralho)
+    baralho = baralho.splice(baralho.indexOf(carta_mesa),1)
+    return carta_mesa
+    
 }
-
-//Função para selecionar o valor de uma carta aleatória do baralho
-function selecionaCartavalor(baralho){
-    //Gerando um número aleatório correspondente ao índice de uma carta no baralho
-    let aleatorio = Math.floor(Math.random() * baralho.length);
-    //Selecionando a carta
-    let valor = baralho[aleatorio]
-    //Retornando o valor da carta
-    return valor[0]
-}
-
-//Evento para quando o botão de "tirar carta" é clicado
-
 //Evento para quando o botão de "tirar carta" é clicado
 tirar_carta.addEventListener("click",()=>{
     //Criando a div com a classe cartas__mesa
     let divMesa = document.createElement("div");
     divMesa.classList.add("cartas__mesa");
 
+    //Pegando a Carta
+    carta_mesaSelecionada = selecionaCartaMesa(baralho1)
+
     //Criando os dois h2s
-    let h2Valor = document.createElement("h2");
-    h2Valor.classList.add("cartas__mesa--valor");
-    h2Valor.textContent = selecionaCartavalor(baralho1)
+
+    let h2ValorUp = document.createElement("h2");
+    h2ValorUp.classList.add("cartas__mesa--valor-up");
+    h2ValorUp.textContent = carta_mesaSelecionada[0] 
     let h2Naipe = document.createElement("h2");
     h2Naipe.classList.add("cartas__mesa--naipe");
-    h2Naipe.textContent = selecionaCartaNaipe(baralho1)
-    
+    h2Naipe.textContent = carta_mesaSelecionada[1];  
+    let h2ValorDown = document.createElement("h2");
+    h2ValorDown.classList.add("cartas__mesa--valor-down");
+    h2ValorDown.textContent = carta_mesaSelecionada[0]  
+
     //Adicionando os h2s dentro da div cartas__mesa
-    divMesa.appendChild(h2Valor);
+    divMesa.appendChild(h2ValorUp);
     divMesa.appendChild(h2Naipe);
+    divMesa.appendChild(h2ValorDown);
     
     //Adicionando a div cartas__mesa dentro de outra div com a classe cartas
     let cartas = document.querySelector(".cartas");
     cartas.appendChild(divMesa);
   });
+

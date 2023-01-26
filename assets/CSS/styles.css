@@ -159,6 +159,9 @@ justify-content: flex-end;
     justify-content: center;
 }
 .cartas__mesa{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: var(--branco-primario);
     color: #DAA520;
     height: 195px;
@@ -167,15 +170,21 @@ justify-content: flex-end;
     margin: 15px;
     border: solid 1.5px;
     border-color: var(--dourado-primario);
-}
-.cartas__mesa--valor{
-    margin: 8px;justify-content: flex-start;
-    font-size: 28px;
 
+}
+
+.cartas__mesa--valor-up {
+    margin: 8px;
+    text-align: start;
+    font-size: 28px;
+}
+.cartas__mesa--valor-down {
+    margin: 8px;
+    text-align: end;
+    font-size: 28px;
 }
 .cartas__mesa--naipe{
     margin: 8px;
     text-align: center;
-    justify-content: center;
-    font-size: 28px;
+    font-size: 50px;
 }
