@@ -152,6 +152,10 @@ justify-content: flex-end;
 
 /* Black - Jack*/
 
+.botoes__jogo{
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .cartas{
     display: flex;
@@ -187,4 +191,10 @@ justify-content: flex-end;
     margin: 8px;
     text-align: center;
     font-size: 50px;
+}
+/*Cartas User e PC*/
+.cartas_usuarioxpc{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
