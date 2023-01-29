@@ -159,6 +159,7 @@ justify-content: flex-end;
 
 .cartas{
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -193,8 +194,26 @@ justify-content: flex-end;
     font-size: 50px;
 }
 /*Cartas User e PC*/
-.cartas_usuarioxpc{
+.cartas__mao{
     display: flex;
+    justify-content: center;
+}
+.cartas_usuario{
+    display: flex;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.titulos_cartas{
+    font-size: 2em;
+    text-align: center;
+}
+
+.cartas_pc{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
 }

@@ -25,6 +25,9 @@ criaBaralhos();
 let valoresCartaUsuario = 0
 let valoresCartaComputador = 0
 
+let pontucaoMesa = 0
+let pontucaoUsuario = 0
+
 //Criando as Cartas da Mesa
 const tirar_cartaMesa = document.getElementById("tirarCarta");
 
@@ -35,80 +38,17 @@ function selecionaCartaMesa(baralho){
 
     //Selecionando a carta
     carta_mesa = baralho[index];
-
+    
     //Limpa a carta do baralho 
     baralho = baralho.splice(baralho.indexOf(carta_mesa),1)
     
-    let valoresCarta = {'Q': 10,'J': 10,'K': 10,'A': 1
-};
-      
-      let valorCarta = valoresCarta[carta_mesa[0]] || parseInt(carta_mesa[0]);
-      valoresCartaUsuario += valorCarta;      
+    let valoresCarta = {'Q': 10,'J': 10,'K': 10,'A': 1};
 
-    return carta_mesa
-
-    
+    let valorCarta = parseInt(valoresCarta[carta_mesa[0]]) || parseInt(carta_mesa[0]);
+      valoresCartaUsuario = valoresCartaUsuario + parseInt(valorCarta);
+      console.log(valoresCartaUsuario)
+    return carta_mesa 
 }
-//Evento para quando o botão de "tirar carta" é clicado
-tirar_cartaMesa.addEventListener("click",()=>{
-    //Criando a div com a classe cartas__mesa
-    let divMesa = document.createElement("div");
-    divMesa.classList.add("cartas__mesa");
-
-    //Pegando a Carta
-    carta_mesaSelecionada = selecionaCartaMesa(baralho1)
-
-    //Criando os dois h2s
-
-    let h2ValorUp = document.createElement("h2");
-    h2ValorUp.classList.add("cartas__mesa--valor-up");
-    h2ValorUp.textContent = carta_mesaSelecionada[0] 
-    let h2Naipe = document.createElement("h2");
-    h2Naipe.classList.add("cartas__mesa--naipe");
-    h2Naipe.textContent = carta_mesaSelecionada[1];  
-    let h2ValorDown = document.createElement("h2");
-    h2ValorDown.classList.add("cartas__mesa--valor-down");
-    h2ValorDown.textContent = carta_mesaSelecionada[0]  
-
-    //Adicionando os h2s dentro da div cartas__mesa
-    divMesa.appendChild(h2ValorUp);
-    divMesa.appendChild(h2Naipe);
-    divMesa.appendChild(h2ValorDown);
-    
-    //Adicionando a div cartas__mesa dentro de outra div com a classe cartas
-    let cartas = document.querySelector(".cartas");
-    cartas.appendChild(divMesa);
-  });
-
-
-//Criando as Cartas do USER
-let tirar_cartaUsuario = document.getElementById("receberCarta")
-
-tirar_cartaUsuario.addEventListener("click", ()=>{
-    let divCartasJogo = document.createElement("div");
-    divCartasJogo.classList.add("cartas__mesa");
-
-    carta_mesaSelecionada = selecionaCartaMesa(baralho1)
-
-    let h2ValorUp = document.createElement("h2");
-    h2ValorUp.classList.add("cartas__mesa--valor-up");
-    h2ValorUp.textContent = carta_mesaSelecionada[0] 
-    let h2Naipe = document.createElement("h2");
-    h2Naipe.classList.add("cartas__mesa--naipe");
-    h2Naipe.textContent = carta_mesaSelecionada[1];  
-    let h2ValorDown = document.createElement("h2");
-    h2ValorDown.classList.add("cartas__mesa--valor-down");
-    h2ValorDown.textContent = carta_mesaSelecionada[0] 
-
-    //Adicionando os h2s dentro da div cartas__mesa
-    divCartasJogo.appendChild(h2ValorUp);
-    divCartasJogo.appendChild(h2Naipe);
-    divCartasJogo.appendChild(h2ValorDown);
-
-
-    let cartas_jogo = document.querySelector(".cartas_usuarioxpc");
-    cartas_jogo.appendChild(divCartasJogo);
-})
 
 //Embaralhando as Cartas e Reiniciando o Jogo
 
@@ -117,12 +57,16 @@ embaralhar_carta = document.getElementById("embaralharCarta")
 function reiniciarJogo() {
     baralho1 = []
     baralho2 = []
-    valoresCartaUsuario = []
-    valoresCartaComputador = []
+    valoresCartaUsuario = 0;
+    valoresCartaComputador = 0;
+    contadorCartas = 0;
     criaBaralhos();
     removeCartas('.cartas');
-    removeCartas('.cartas_usuarioxpc');
+    removeCartas('.cartas_usuario');
+    removeCartas('.cartas_pc')
 }
+
+
 function removeCartas(selector) {
     let cartas = document.querySelector(selector);
     while (cartas.firstChild) {
