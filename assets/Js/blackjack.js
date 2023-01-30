@@ -53,7 +53,7 @@ embaralhar_carta = document.getElementById("embaralharCarta")
 function reiniciarJogo() {
     baralho1 = []
     baralho2 = []
-    valorTortalCartasMesa = 0;
+    valorTotalCartasMesa = 0;
     valoresTotalUser = 0;
     valoresTotalComputador = 0;
     contadorCartas = 0;
