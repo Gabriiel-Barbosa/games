@@ -1,4 +1,6 @@
 //Evento para quando o botão de "tirar carta" é clicado
+
+let contadorCartas = 0;
 tirar_cartaMesa.addEventListener("click",()=>{
     if (contadorCartas == 0 || contadorCartas == 1 ) {
         alert("Você ainda anão possi cartas, por favor, receba suas duas carta");
@@ -11,7 +13,19 @@ tirar_cartaMesa.addEventListener("click",()=>{
 
     //Pegando a Carta
     carta_mesaSelecionada = selecionaCartaMesa(baralho1)
-    exemplo = parseInt(carta_mesaSelecionada[0])
+
+    // Pontuação Total das Cartas na mesa
+    
+   console.log (carta_mesaSelecionada[0])
+   if ( carta_mesaSelecionada[0] == 'J' || carta_mesaSelecionada[0] == 'Q'|| carta_mesaSelecionada[0] == 'k') {
+    valorTotalCartasMesa += 10;}
+    else if (carta_mesaSelecionada[0] == 'A'){
+        valorTotalCartasMesa += 1;
+    }
+    else{
+        valorTotalCartasMesa += parseInt( carta_mesaSelecionada[0])
+    }
+
 
     //Criando os dois h2s
 
@@ -38,20 +52,27 @@ tirar_cartaMesa.addEventListener("click",()=>{
 
 //Criando as Cartas do USER
 
-let contadorCartas = 0;
+let contadorCartasUser = 0;
 
 let tirar_cartaUsuario = document.getElementById("receberCarta");
 let tirar_cartaComputador = document.getElementById("receberCarta");
 
 tirar_cartaUsuario.addEventListener("click", () => {
-    //if (contadorCartas === 2) {
-        //alert("O limite de cartas por usuário são 2.");
-        //return;}
+    if (contadorCartasUser === 2) {
+        alert("O limite de cartas por usuário são 2.");
+        return;}
 
     let divCartasJogo = document.createElement("div");
     divCartasJogo.classList.add("cartas__mesa");
 
     carta_mesaSelecionada = selecionaCartaMesa(baralho1);
+    //Pontuação da Cartas do Computador 
+    let valoresCarta = {'K': 10,'J': 10,'Q': 10,'A': 1};
+    carta_mesaSelecionada = selecionaCartaMesa(baralho1);
+    let valorCarta = valoresCarta[carta_mesaSelecionada[0]] || parseInt(carta_mesaSelecionada[0]);
+    valoresTotalUser = valoresTotalUser + valorCarta;
+    //console.log(valoresTotalUser);
+    
 
     let h2ValorUp = document.createElement("h2");
     h2ValorUp.classList.add("cartas__mesa--valor-up");
@@ -71,22 +92,27 @@ tirar_cartaUsuario.addEventListener("click", () => {
     let cartas_jogo = document.querySelector(".cartas_usuario");
     cartas_jogo.appendChild(divCartasJogo);
     removeCartas('.cartas');
+    contadorCartas++;
 
-contadorCartas++;
+    contadorCartasUser++;
 });
 
-//Criando Cartas PC
+let contadorCartasPC= 0;
 
 tirar_cartaComputador.addEventListener("click", () => {
-    //if (contadorCartas === 2) {
-        //alert("O limite de cartas por usuário são 2.");
-        //return;}
+    if (contadorCartasPC === 2) {
+        alert("O limite de cartas por usuário são 2.");
+        return;}
 
     let divCartasJogo = document.createElement("div");
     divCartasJogo.classList.add("cartas__mesa");
 
+    //Pontuação da Cartas do Computador 
+    let valoresCarta = {'K': 10,'J': 10,'Q': 10,'A': 1};
     carta_mesaSelecionada = selecionaCartaMesa(baralho1);
-
+    let valorCarta = valoresCarta[carta_mesaSelecionada[0]] || parseInt(carta_mesaSelecionada[0]);
+    valoresTotalComputador = valoresTotalComputador + valorCarta;
+    
     let h2ValorUp = document.createElement("h2");
     h2ValorUp.classList.add("cartas__mesa--valor-up");
     h2ValorUp.textContent = carta_mesaSelecionada[0];
@@ -106,5 +132,13 @@ tirar_cartaComputador.addEventListener("click", () => {
     cartas_jogo.appendChild(divCartasJogo);
     removeCartas('.cartas');
 
-contadorCartas++;
+    contadorCartasPC++;
 });
+
+
+let resultadoJogo = document.getElementById('resultadoJogo')
+
+resultadoJogo.addEventListener('click', ()=>{
+    resultado()
+
+})

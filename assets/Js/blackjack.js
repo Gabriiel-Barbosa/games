@@ -22,11 +22,8 @@ function criaBaralhos(){
 criaBaralhos();
 
 //Arrays que vão conter a soma dos valores das cartas
-let valoresCartaUsuario = 0
-let valoresCartaComputador = 0
 
 let pontucaoMesa = 0
-let pontucaoUsuario = 0
 
 //Criando as Cartas da Mesa
 const tirar_cartaMesa = document.getElementById("tirarCarta");
@@ -44,9 +41,8 @@ function selecionaCartaMesa(baralho){
     
     let valoresCarta = {'Q': 10,'J': 10,'K': 10,'A': 1};
 
-    let valorCarta = parseInt(valoresCarta[carta_mesa[0]]) || parseInt(carta_mesa[0]);
-      valoresCartaUsuario = valoresCartaUsuario + parseInt(valorCarta);
-      console.log(valoresCartaUsuario)
+    let valorCarta = valoresCarta[carta_mesa[0]] || parseInt(carta_mesa[0]);
+    
     return carta_mesa 
 }
 
@@ -57,9 +53,12 @@ embaralhar_carta = document.getElementById("embaralharCarta")
 function reiniciarJogo() {
     baralho1 = []
     baralho2 = []
-    valoresCartaUsuario = 0;
-    valoresCartaComputador = 0;
+    valorTortalCartasMesa = 0;
+    valoresTotalUser = 0;
+    valoresTotalComputador = 0;
     contadorCartas = 0;
+    contadorCartasUser = 0
+    contadorCartasPC = 0
     criaBaralhos();
     removeCartas('.cartas');
     removeCartas('.cartas_usuario');
