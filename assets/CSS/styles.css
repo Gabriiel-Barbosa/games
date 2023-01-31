@@ -18,6 +18,8 @@
 body{
     background-color: var(--corde-fundo);
     color: var(--branco-primario);
+    height: 100vh;
+    overflow-y: auto;
   }
  /*Header*/ 
 .cabecalho__titulo{
@@ -28,16 +30,16 @@ body{
     font-size: 3rem;
 }
 .cabecalho__links{
-display: flex;
-justify-content: flex-end;
-}
+    display: flex;
+    justify-content: flex-end;
+   }
 .cabecalho__links-itens{
     margin: 8px ;
     padding: 8px;
     background-color: var(--preto-primario);
     border: solid var(--preto-primario) 2px ;
     border-radius: 5px;
-
+    text-align: center;
 }
 .cabecalho__links-itens:hover{
     color: var(--dourado-primario);
@@ -152,9 +154,20 @@ justify-content: flex-end;
 
 /* Black - Jack*/
 
-.botoes__jogo{
+.cabecalho__links-blackjack{
+    background-color: var(--preto-primario);
+    display: grid;
+    grid-template-columns: 25% auto auto;
+}
+.cabecalho__links-blackjack a, button{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+.conteudo__jogo{
+    display: grid;
+    grid-template-columns:25% 75%;
 }
 
 .pontuacaoQuadro{
@@ -174,6 +187,14 @@ justify-content: flex-end;
     font-size: 1.5em;
 
 }
+.opcoes{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--preto-primario);
+}
+
+
 .cartas{
     display: flex;
     align-items: center;
