@@ -4,7 +4,7 @@ let contadorCartas = 0;
 
 tirar_cartaMesa.addEventListener("click",()=>{
     if (contadorCartas == 0 || contadorCartas == 1 ) {
-        alert("Você ainda anão possi cartas, por favor, receba suas duas carta");
+        alerta("Você ainda não possui cartas. Por favor, clique no botão 'Distribuir cartas'");
         return;
         
     } else {
@@ -60,7 +60,7 @@ let tirar_cartaComputador = document.getElementById("receberCarta");
 
 tirar_cartaUsuario.addEventListener("click", () => {
     if (contadorCartasUser === 2) {
-        alert("O limite de cartas por usuário são 2.");
+        alerta("O limite de cartas por usuário são 2.");
         return;}
 
     let divCartasJogo = document.createElement("div");

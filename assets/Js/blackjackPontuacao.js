@@ -19,7 +19,11 @@ function resultado(){
             pontosUsuario += 1
             spanpontosUsuario.innerHTML = pontosUsuario
             reiniciarJogo()
-        } else {  
+        } 
+        else if (valoresTotalUser == 0){
+            alerta('O jogo ainda não possui cartas suficientes')        
+        }   
+        else {  
             alerta('Você perdeu. Sua pontuação foi: ' + valoresTotalUser )
             pontosComputador += 1
             spanpontosComputador.innerHTML = pontosComputador
