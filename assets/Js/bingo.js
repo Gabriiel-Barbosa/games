@@ -2,15 +2,12 @@
 const botaoSortearNumero = document.querySelector('bingo__botoes--sortear-numero');
 
 //Pegando o botão que vai dispara o alerta com o tutorial
-function tuorialBingo(){
-    customAlert("<ul>" +
-    "<li>Sortear Cartela - Sorteia a cartela do jogador e do computador.</li>" +
-    "<li>Sortear Cartela - Reinicia o sorteio de números</li>" +
-    "<li>Sortear número  - Sorteia os números.</li>" +
-    "<li>Marque na sua cartela os números correspondentes que forem sorteados.</li>" +
-    "<li>O computador marcará automaticamente na cartela dele, os números que forem sorteados.</li>" +
-    "</ul>")
-}
+
+let tutorial_bingo = document.getElementById('tutorial_bingo')
+
+tutorial_bingo.addEventListener('click', ()=>{
+    alerta('Sortear Cartela - Sorteia a cartela do jogador e do computador. Sortear Cartela - Reinicia o sorteio de números. Sortear número  - Sorteia os números.Marque na sua cartela os números correspondentes que forem sorteados. O computador marcará automaticamente na cartela dele, os números que forem sorteados')
+})
 
 //Função que sorteia os números e adiciona os números no array sorteados
 function sortearNumero() {
@@ -24,7 +21,7 @@ function sortearNumero() {
         document.querySelector(".sorteio__ultimo-numero").textContent = "ULTIMO NUMERO SORTEADO: " + numeroSorteado;
         document.querySelector(".sorteio__numeros").textContent = "NUMEROS SORTEADOS: " + sorteados.join(", ");
     }else if(sorteados.length == 75){
-        alert("Todos os números foram sorteados");
+        alerta("Todos os números foram sorteados");
     }
 }
 //Array que armazena os numeros sorteados
@@ -60,9 +57,6 @@ function sortearIntervalo(rangeStart, rangeEnd, cartela) {
     cartela.push(numeros_selecionados);
 }
 
-
-
-  
 //Chamada da função para prrencher a tabela do Usuário
 function numerosCartela(cartela_srt) {
     cartela_srt.length = 0
@@ -132,11 +126,11 @@ tabela_click.onclick = function(event){
             contador_user = contador_user + 1
         console.log(contador_user)
             if(contador_user == 25){
-                customAlert("BINGOOOOOOOOOOO!!!PARABÉNS, VOCÊ VENCEU")
+                alerta("BINGOOOOOOOOOOO!!!PARABÉNS, VOCÊ VENCEU")
             }
 
         }  else {
-            alert("Esse número ainda não foi sorteado!")
+            alerta("Esse número ainda não foi sorteado!")
         }
     }
 }
@@ -155,7 +149,14 @@ function ponteiaTabela(){
         }
     }
     if(contador == 25){
-        customAlert("BINGOOOOOOOOOOO, mas para o computador. Tente na Próxima!!!")
+        alerta("BINGOOOOOOOOOOO, mas para o computador. Tente na Próxima!!!")
     }
 }
   
+
+function alerta(texto) {
+    Swal.fire({ 
+        text: texto,
+        confirmButtonText: 'Confirmar',
+    });
+}

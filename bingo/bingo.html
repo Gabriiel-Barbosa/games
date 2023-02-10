@@ -13,21 +13,15 @@
     <header class="cabecalho">
         <h1 class="cabecalho__titulo">Bem Vindo ao Bingo</h1>
         <div class="cabecalho__links">
-            <a class="cabecalho__links-jogos cabecalho__links-itens" href="/index.html">Todos os Jogos</a>
-            <button class="cabecalho__links-tutorial cabecalho__links-itens" onclick="tuorialBingo()">Como Jogar</button>
+            <a class="cabecalho__links-jogos cabecalho__links-itens" id="todos_jogos" href="/index.html">Todos os Jogos</a>
+            <button class="cabecalho__links-tutorial cabecalho__links-itens" id="tutorial_bingo">Como Jogar</button>
 
         </div >
         
     </header>
     <main class="principal">
 
-        <!--Alerta para o jogador-->
-        <div id="custom-alert" class="alert">
-            <div class="alert-content">
-              <p id="alert-message"></p>
-              <button id="alert-close-btn">Fechar</button>
-            </div>
-          </div>
+    
         <!--Seção dos botões do jogo-->
         <section class="jogos__botoes">
             
@@ -59,5 +53,7 @@
     </main>
     <!--script para o funcionamento do jogo-->
     <script src="/assets/Js/bingo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 </body>
 </html>

@@ -56,6 +56,9 @@ body{
     font-size: 25px;
     
 }
+#todos_jogos{
+    font-size: 25px;  
+}
 .jogos__botoes-item{
     background-color: var(--preto-primario);
     border: solid var(--preto-primario) 3px;
@@ -123,33 +126,6 @@ body{
     border-radius: 10px;
     margin: 5px;
 }
-/*Alerta*/
-.alert {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--preto-primario);
-    border: solid var(--dourado-primario);
-    padding: 20px;
-    border-radius: 5px;
-    display: none;
-    z-index: 999;
-  }
-.alert-content {
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-#alert-close-btn {
-    background-color: var(--dourado-primario);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 8px;
-}
-  
 
 
 /* Black - Jack*/
