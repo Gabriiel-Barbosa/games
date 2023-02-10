@@ -1,6 +1,7 @@
 //Evento para quando o botão de "tirar carta" é clicado
 
 let contadorCartas = 0;
+
 tirar_cartaMesa.addEventListener("click",()=>{
     if (contadorCartas == 0 || contadorCartas == 1 ) {
         alert("Você ainda anão possi cartas, por favor, receba suas duas carta");
@@ -141,4 +142,9 @@ let resultadoJogo = document.getElementById('resultadoJogo')
 resultadoJogo.addEventListener('click', ()=>{
     resultado()
 
+})
+
+tutorial_blackjack = document.getElementById('tutorial_blackjack')
+tutorial_blackjack.addEventListener('click', ()=>{
+    alerta(`Distribuas as Cartas. Compare suas cartas com as do computador através do botão resultado`)
 })

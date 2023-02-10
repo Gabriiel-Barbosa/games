@@ -15,20 +15,29 @@ function resultado(){
     console.log(valoresTotalUser)
     if (valoresTotalUser <= 21 ) {
         if (valoresTotalUser > valoresTotalComputador ) {
-            alert('Parabéns, você venceu!! Você fez: '+ valoresTotalUser +' pontos')
+            alerta('Parabéns, você venceu!!!!')
             pontosUsuario += 1
             spanpontosUsuario.innerHTML = pontosUsuario
             reiniciarJogo()
         } else {  
-            alert('Você perdeu. Sua pontuação foi: ' + valoresTotalUser )
+            alerta('Você perdeu. Sua pontuação foi: ' + valoresTotalUser )
             pontosComputador += 1
             spanpontosComputador.innerHTML = pontosComputador
             reiniciarJogo()
         }     
     } else {
-        alert('Você estorou a pontuação máxima. Vitória do Computador!!!')
+        alerta('Você estorou a pontuação máxima. Vitória do Computador!!!')
         pontosComputador += 1
         spanpontosComputador.innerHTML = pontosComputador
         reiniciarJogo()  
     }
+}
+
+
+
+function alerta(texto) {
+    Swal.fire({ 
+        text: texto,
+        confirmButtonText: 'Confirmar',
+    });
 }
